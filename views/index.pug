@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{data[0].msg}
+    span #{title}
+  ul
+    each item in data
+      li= item.msg
+  form(action="/upload", method="post", enctype="multipart/form-data")
+    input(type="text", name="text")
+    input(type="submit", value="提交1")
